@@ -30,3 +30,6 @@ def get_tables(path):
     tables = pd.read_csv(path, sep=":")
     return(tables.query('to_be_loaded=="yes"'))
 
+
+def gettable(path):
+    return ((pd.read_csv(path, sep=":")).query('to_be_loaded=="yes"'))

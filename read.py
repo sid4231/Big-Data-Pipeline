@@ -6,8 +6,8 @@ def readtable (dbdetails,tablename,limit=0):
     connection = getconnection(sourcedb['DB_TYPE'],sourcedb['DB_HOST'],sourcedb['DB_NAME'],sourcedb['DB_USER'],sourcedb['DB_PASS'])
     cursor=connection.cursor()
     if limit == 0:
-        query = f'SELECT * FROM {tablename}'
-
+        query = f"SELECT * FROM {tablename}"
+        print(query)
     else:
         query = f'SELECT * FROM {tablename} LIMIT{limit}'
 
@@ -18,3 +18,4 @@ def readtable (dbdetails,tablename,limit=0):
     connection.close()
 
     return (data,columnname)
+

@@ -1,6 +1,6 @@
 import os
 
-DB_DETAILS = {
+DBDETAILS = {
     'dev': {
         'SOURCE_DB': {
             'DB_TYPE': 'mysql',

@@ -1,14 +1,22 @@
 import sys
-from config import DB_DETAILS
-#from util import get_tables
-#from read import readtable
+from config import DBDETAILS
+from util import gettable
+from read import readtable
+import pandas as pd
 
 
 def main():
     env = sys.argv[1]
-    db_details = DB_DETAILS[env]
-    print(db_details)
-    print(db_details)
+    db_details = DBDETAILS[env]
+
+    tablename = gettable('table_list')
+    for t1 in tablename['table_name']:
+        data,CN=readtable(db_details,t1)
+        for data in data:
+            print(data)
+
+
+
 
 
 if __name__ == '__main__':
